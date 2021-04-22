@@ -79,3 +79,12 @@ git pull
 including them into our local code yet
 
 2 -  git merge : which tells our local repo to merge in the chnages we get from git fetch into our local code"""
+
+# 4 - Isolate feature development with git branch
+git branch new-feature
+
+# 5 - View our branch on repos by typing the following:
+git branch
+
+# switch to different branch 
+git checkout new-feature
