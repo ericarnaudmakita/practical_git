@@ -37,3 +37,31 @@ git push --set-upstream origin master
 
 # check the status of our repos
 git status
+
+# as soon as we updated one file, we can check it out by using the git status and git will let us know 
+# about the way to go, example follow: I just change the file and use git status, and below is the result:
+
+"""On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   practical_git.py
+
+no changes added to commit (use "git add" and/or "git commit -a")"""
+
+# since I want to commit and push my updates, then I'll do the following:
+git add -A
+git status
+git commit -m "add lignes from commit our changes"
+# at this stage, I did not push anything yet to my remote repogit
+git status
+
+"""On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean"""
+git push
+git status
