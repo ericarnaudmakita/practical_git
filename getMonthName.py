@@ -1,7 +1,7 @@
 def getMonthName():
     """ this function capitalizes the each month in the months liste
     with the list comprehension"""
-    months = ['january', 'february','march', 'april']
+    months = ['january', 'february','march', 'april', 'may', 'june']
     converted_months = [x.title() for x in months]
     
     return converted_months
