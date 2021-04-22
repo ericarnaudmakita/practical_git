@@ -1,5 +1,5 @@
 def getMonthName():
-
+	# use the list comprehension for such things
     months = ['january', 'february','march', 'april']
     converted_months = [x.title() for x in months]
 
