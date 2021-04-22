@@ -1,4 +1,4 @@
-# initialize new repo
+# 1 - Create local repos with git init
 git init
 
 # check what's inside the repo
@@ -16,11 +16,11 @@ git remote add origin https://github.com/ericarnaudmakita/practical_git.git
 # check if we setup correctly the remote repo
 git remote -v
 
-# Now, in case we have to clone a remote repo, we do the following
-# git clone follows by the link of the repos, example:
+# 2 - Copy remote repos to local machines with git clone
 git clone https://github.com/ericarnaudmakita/practical_git.git
 
-# Add or stage all the changes that we made
+# 3 - Capture the history snapshots with git add/commit/push
+# staging
 git add -A
 
 # we can check statuts of our branch
@@ -52,9 +52,9 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")"""
 
 # since I want to commit and push my updates, then I'll do the following:
-git add -A
+git add -A # staging 
 git status
-git commit -m "add lignes from commit our changes"
+git commit -m "add lignes from commit our changes" # commit our changes
 # at this stage, I did not push anything yet to my remote repogit
 git status
 
@@ -65,3 +65,17 @@ Your branch is ahead of 'origin/master' by 1 commit.
 nothing to commit, working tree clean"""
 git push
 git status
+
+# to add a specific file, we don't use git add -A but 
+git add file_name
+git commit -m "add file_name" # commit our changes
+git push
+
+# Sync local and remote repos with git pull
+git pull
+
+""" git pull is in fact a short command of two other commands that we can run individualy if wa want:
+1 - git fetch : that tells our locam repo to grab the latest changes from our remote repo and store them locally into our local repo without 
+including them into our local code yet
+
+2 -  git merge : which tells our local repo to merge in the chnages we get from git fetch into our local code"""
