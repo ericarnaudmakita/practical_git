@@ -47,7 +47,7 @@ Your branch is up to date with 'origin/master'.
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   practical_git.py
+  modified:   practical_git.py
 
 no changes added to commit (use "git add" and/or "git commit -a")"""
 
@@ -176,7 +176,7 @@ You have unmerged paths.
 
 Unmerged paths:
   (use "git add <file>..." to mark resolution)
-	both modified:   getMonthName.py
+  both modified:   getMonthName.py
 
 no changes added to commit (use "git add" and/or "git commit -a")"""
 
@@ -185,7 +185,7 @@ that aws both modified.
 So we will first open the file in our local machine, and inspect it: as follow"""
 def getMonthName():
 <<<<<<< HEAD
-	# use the list comprehension for such things
+  # use the list comprehension for such things
 =======
     """ this function capitalizes the each month in the months liste"""
 >>>>>>> 02c1c3a4d9ff4b41fa711f9d379bf618566be861
@@ -198,7 +198,7 @@ def getMonthName():
 
  """ what does it says is that the first part :
  <<<<<<< HEAD
-	# use the list comprehension for such things
+  # use the list comprehension for such things
 =======
 is our change, and the second part below the equal marker till >>> 02... is the remote change
 From here we do have 3 cases:
@@ -227,42 +227,42 @@ git stash # will make our repos back to the stage before the bug (the uncommited
 
 # now we can create our new branch to fix the bug
 git checkout -b hotfix-dashes # here we will fix the bug then we will switch to master and merge that branch to master
+git checkout months
+git stash apply 
 
+# 9 - Navigate git command pager output with Unix less commands
+git log --oneline ; git log --decorate; git log --graph; git log --p; git log --stat; git log --online --stat --graph
 
+git log 3
 
+# 10 - Compare file changes with git diff
+git checkout -b es2015-module
 
+# Let's say we add two more months in the feature getMonthName.py
+git status
+git diff
+# below is the results:
 
+diff --git a/getMonthName.py b/getMonthName.py
+index d2a28ae..4934bf7 100644
+--- a/getMonthName.py
++++ b/getMonthName.py
+@@ -1,7 +1,7 @@
+ def getMonthName():
+     """ this function capitalizes the each month in the months liste
+     with the list comprehension"""
+-    months = ['january', 'february','march', 'april']
++    months = ['january', 'february','march', 'april', 'may', 'june']
+     converted_months = [x.title() for x in months]
 
+     return converted_months
 
+# we can also write git diff --stat
 
+# 11 - Clean up commits with git rebase
+""" Let's say we have been refactoring the code, and we want to cleanup or commits before commiting them.
+the first thing we do will be to fetch the latest code from the remote, then we we will compare
+the orgin/master to our current branch"""
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+git fetch
+git log origin/master..
